@@ -2,13 +2,29 @@ import { products } from '@/data/products';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 
-export default function Page({ params }) {
-  // Validate product ID
-  if (!params.id) {
+type Props = {
+  params: {
+    id: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const product = products.find((p) => p.id === params.id);
+
+  if (!product) {
     notFound();
   }
 
+  return {
+    title: `${product.name} - StyleHub`,
+    description: product.description
+  };
+}
+
+export default async function Page({ params }: Props) {
   const product = products.find((p) => p.id === params.id);
 
   if (!product) {
