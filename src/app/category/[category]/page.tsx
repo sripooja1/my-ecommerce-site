@@ -11,8 +11,8 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default function CategoryPage({ params }: Props) {
-  const { category } = params;
+export default async function CategoryPage({ params }: Props) {
+  const category = params.category;
   
   // Validate category
   if (category !== 'men' && category !== 'women') {

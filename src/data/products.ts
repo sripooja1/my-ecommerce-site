@@ -76,5 +76,27 @@ export const products: Product[] = [
     image: '/images/products/womens-jeans.jpg',
     sizes: ['26', '28', '30', '32'],
     colors: ['Blue', 'Black', 'White']
+  },
+  {
+    id: '7',
+    name: "Men's Polo Shirt",
+    description: 'Classic polo shirt made from premium piqué cotton. Perfect for smart casual occasions.',
+    price: 34.99,
+    category: 'men',
+    subcategory: 't-shirts',
+    image: '/images/products/mens-polo.jpg',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['Navy', 'Burgundy', 'Forest Green']
+  },
+  {
+    id: '8',
+    name: "Women's Cardigan",
+    description: 'Soft and cozy knit cardigan with a relaxed fit. Ideal for layering in any season.',
+    price: 44.99,
+    category: 'women',
+    subcategory: 'sweaters',
+    image: '/images/products/womens-cardigan.jpg',
+    sizes: ['XS', 'S', 'M', 'L'],
+    colors: ['Cream', 'Gray', 'Dusty Rose']
   }
 ]; 
