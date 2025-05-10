@@ -4,13 +4,14 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { notFound } from 'next/navigation';
 
-interface CategoryPageProps {
+type Props = {
   params: {
     category: string;
   };
-}
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-export default function CategoryPage({ params }: CategoryPageProps) {
+export default function CategoryPage({ params }: Props) {
   const { category } = params;
   
   // Validate category
