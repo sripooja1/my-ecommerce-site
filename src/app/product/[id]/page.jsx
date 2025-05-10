@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
-export default function ProductPage({ params }: { params: { id: string } }) {
+export default function Page({ params }) {
   const product = products.find((p) => p.id === params.id);
 
   if (!product) {
@@ -21,7 +21,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="lg:grid lg:grid-cols-2 lg:gap-x-8">
           <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg">
@@ -33,24 +32,20 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               className="h-full w-full object-cover object-center"
             />
           </div>
-
           <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
               {product.name}
             </h1>
-
             <div className="mt-3">
               <h2 className="sr-only">Product information</h2>
               <p className="text-3xl tracking-tight text-gray-900">
                 ${product.price}
               </p>
             </div>
-
             <div className="mt-6">
               <h3 className="sr-only">Description</h3>
               <p className="text-base text-gray-700">{product.description}</p>
             </div>
-
             <div className="mt-6">
               <h3 className="text-sm font-medium text-gray-900">Colors</h3>
               <div className="mt-2 flex flex-wrap gap-2">
@@ -64,7 +59,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 ))}
               </div>
             </div>
-
             <div className="mt-6">
               <h3 className="text-sm font-medium text-gray-900">Sizes</h3>
               <div className="mt-2 flex flex-wrap gap-2">
@@ -78,7 +72,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 ))}
               </div>
             </div>
-
             <div className="mt-10">
               <button
                 type="button"
@@ -90,7 +83,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
           </div>
         </div>
       </main>
-
       <Footer />
     </div>
   );
