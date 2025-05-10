@@ -14,7 +14,7 @@ export default function Home() {
             Welcome to StyleHub
           </h1>
           <p className="text-lg text-gray-600">
-            Discover the latest trends in men's and women's fashion
+            Discover the latest trends in men&apos;s and women&apos;s fashion
           </p>
         </div>
 
