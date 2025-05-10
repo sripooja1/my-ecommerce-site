@@ -1,5 +1,6 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import Link from 'next/link';
 
 export default function CartPage() {
   return (
@@ -17,12 +18,12 @@ export default function CartPage() {
             <p className="text-gray-600 mb-8">
               Looks like you haven't added any items to your cart yet.
             </p>
-            <a
+            <Link
               href="/"
               className="inline-flex items-center rounded-md border border-transparent bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
             >
               Continue Shopping
-            </a>
+            </Link>
           </div>
         </div>
       </main>

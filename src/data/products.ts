@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export interface Product {
   id: string;
   name: string;

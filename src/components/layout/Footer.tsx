@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
@@ -13,20 +15,20 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Shop</h3>
             <ul className="space-y-2">
-              <li><a href="/category/men" className="text-gray-400 hover:text-white">Men's Collection</a></li>
-              <li><a href="/category/women" className="text-gray-400 hover:text-white">Women's Collection</a></li>
-              <li><a href="/new-arrivals" className="text-gray-400 hover:text-white">New Arrivals</a></li>
-              <li><a href="/sale" className="text-gray-400 hover:text-white">Sale</a></li>
+              <li><Link href="/category/men" className="text-gray-400 hover:text-white">Men&apos;s Collection</Link></li>
+              <li><Link href="/category/women" className="text-gray-400 hover:text-white">Women&apos;s Collection</Link></li>
+              <li><Link href="/new-arrivals" className="text-gray-400 hover:text-white">New Arrivals</Link></li>
+              <li><Link href="/sale" className="text-gray-400 hover:text-white">Sale</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4">Customer Service</h3>
             <ul className="space-y-2">
-              <li><a href="/contact" className="text-gray-400 hover:text-white">Contact Us</a></li>
-              <li><a href="/shipping" className="text-gray-400 hover:text-white">Shipping Info</a></li>
-              <li><a href="/returns" className="text-gray-400 hover:text-white">Returns</a></li>
-              <li><a href="/faq" className="text-gray-400 hover:text-white">FAQ</a></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-white">Contact Us</Link></li>
+              <li><Link href="/shipping" className="text-gray-400 hover:text-white">Shipping Info</Link></li>
+              <li><Link href="/returns" className="text-gray-400 hover:text-white">Returns</Link></li>
+              <li><Link href="/faq" className="text-gray-400 hover:text-white">FAQ</Link></li>
             </ul>
           </div>
 
