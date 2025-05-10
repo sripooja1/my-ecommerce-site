@@ -4,6 +4,11 @@ import Footer from '@/components/layout/Footer';
 import { notFound } from 'next/navigation';
 
 export default function Page({ params }) {
+  // Validate product ID
+  if (!params.id) {
+    notFound();
+  }
+
   const product = products.find((p) => p.id === params.id);
 
   if (!product) {
