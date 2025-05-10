@@ -6,14 +6,15 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const product = products.find((p) => p.id === params.id);
+  const { id } = await params;
+  const product = products.find((p) => p.id === id);
 
   if (!product) {
     notFound();
@@ -25,8 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function Page({ params }: Props) {
-  const product = products.find((p) => p.id === params.id);
+export default async function Page({ params }: Props) {
+  const { id } = await params;
+  const product = products.find((p) => p.id === id);
 
   if (!product) {
     notFound();
