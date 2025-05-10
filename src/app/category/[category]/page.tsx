@@ -3,7 +3,7 @@ import ProductCard from '@/components/products/ProductCard';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
-export default function CategoryPage({ params }: { params: { category: string } }) {
+export default function Page({ params }: { params: { category: string } }) {
   const categoryProducts = products.filter(
     (product) => product.category === params.category
   );
