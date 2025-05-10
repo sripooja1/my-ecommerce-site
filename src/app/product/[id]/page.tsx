@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import Image from 'next/image';
 
 type Props = {
   params: {
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: Props) {
+export default function Page({ params }: Props) {
   const product = products.find((p) => p.id === params.id);
 
   if (!product) {
@@ -37,11 +38,14 @@ export default async function Page({ params }: Props) {
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="aspect-w-1 aspect-h-1">
-            <img
+          <div className="aspect-w-1 aspect-h-1 relative">
+            <Image
               src={product.image}
               alt={product.name}
-              className="w-full h-full object-cover rounded-lg"
+              fill
+              className="object-cover rounded-lg"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
             />
           </div>
           
